@@ -1,0 +1,19 @@
+<html>
+<title>article</title>
+<head><h1><i>Disability inclusion in classroom assessments</i></h1><hr>
+</head>
+<body>
+<p>How do you ensure your classroom assessments are inclusive and meet the diverse needs of all your students? 
+A new study in India has explored how teachers are assessing students with disability.
+In this article, Anannya Chakraborty shares findings from the study, and what they mean for teachers and school leaders. 
+Research shows that formative assessments have a significant role in supporting the learning progress of all students.
+Based on assessment feedback, teachers can adjust instructions to address the learning area in which an individual student is not be performing well<sup> (Black & Wiliam, 1998).</sup> 
+In the context of disability inclusion, teachers can adapt teaching practices and curriculum based on feedback from formative assessments (UNESCO, 2019).  
+In India, the National Education Policy (NEP) emphasises the importance of formative assessments to improve quality and equity in school education 
+<mark>(Ministry of Human Resource Development, 2020)</mark>. However, little evidece is available on how students with disability are included in formative assessments in Indian classrooms.
+Teachers have a central role in formative assessments, right from designing the tests to offering accommodations and an appropriate test environment.
+In our study, we looked at how teachers assess students with disability through formative assessments.
+The findings have been published in the Australasian Journal of Special and Inclusive Education <del>(Chakraborty et al., 2024)</del>
+</p>
+</body>
+</html>           

@@ -1,0 +1,16 @@
+<html>
+<title> HTML Intro
+</title>
+<head><h1>HTML Tags</h1> <h2>list of name</h2><h3 style="font-family:vendana:">hafeesha</h3><hr>
+</head>
+<body>
+<p>
+<br>hi Rickshitha
+<br>Harini</br></p>
+<p>
+Madhu<br></p>
+<p>
+Bujji
+</p>
+</body>
+</html>
