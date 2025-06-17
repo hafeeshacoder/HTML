@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile Billing System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f2f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      padding: 30px;
+      max-width: 450px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+      background-color: white;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card border border-primary">
+  <h4 class="text-center text-primary">Mobile Billing System</h4>
+  <form onsubmit="showPlan(event)">
+    <div class="mb-3 mt-3">
+      <label for="planCode" class="form-label">Enter Plan Code (A, B, C, D):</label>
+      <input type="text" class="form-control" id="planCode" placeholder="e.g., A or B" required>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Check Plan</button>
+  </form>
+  <div id="result" class="text-center mt-3"></div>
+</div>
+
+<script>
+  function showPlan(event) {
+    event.preventDefault(); // Stop form from reloading
+
+    let code = document.getElementById("planCode").value.trim().toUpperCase();
+    let resultDiv = document.getElementById("result");
+    let planName, price, data;
+
+    switch (code) {
+      case "A":
+        planName = "Basic Plan";
+        price = "$10";
+        data = "1 GB/month";
+        break;
+      case "B":
+        planName = "Standard Plan";
+        price = "$20";
+        data = "5 GB/month";
+        break;
+      case "C":
+        planName = "Premium Plan";
+        price = "$30";
+        data = "15 GB/month";
+        break;
+      case "D":
+        planName = "Unlimited Plan";
+        price = "$50";
+        data = "Unlimited";
+        break;
+      default:
+        resultDiv.innerHTML = "<span class='text-danger'>Invalid plan code. Please enter A, B, C, or D.</span>";
+        return;
+    }
+
+    resultDiv.innerHTML = `
+      <div class="alert alert-success">
+        <strong>${planName}</strong><br>
+        Price: ${price}<br>
+        Data Limit: ${data}
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>

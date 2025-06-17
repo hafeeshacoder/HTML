@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📚 Bookstore Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f9fb;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      background-color: #6f42c1;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: white !important;
+    }
+
+    .dashboard-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #5a189a;
+    }
+
+    .status-message {
+      background-color: #e0bbff;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status-message i {
+      color: #6f42c1;
+    }
+
+    .book-item {
+      padding: 15px;
+      border-radius: 10px;
+      background: white;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+
+    li {
+      color: blue;
+    }
+
+    .analytics-card {
+      border: 1px solid #ced4da;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: #ffffff;
+    }
+
+    footer {
+      background: #6f42c1;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: #fff;
+      background-color: #6f42c1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">📚 Bookstore Admin</a>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <!-- Welcome Message -->
+    <div class="alert alert-info">
+      <i class="bi bi-info-circle"></i> Welcome Admin! Use the sections below to manage your bookstore efficiently.
+    </div>
+
+    <h1 id="dashboardTitle" class="dashboard-title text-center">Admin Dashboard - Bookstore</h1>
+
+    <!-- Sales Analytics with Progress Bars -->
+    <div class="row my-4">
+      <!-- Total Sales -->
+      <div class="col-md-4">
+        <div class="analytics-card text-center">
+          <h5>Total Sales</h5>
+          <p class="text-success fw-bold">₹12,000</p>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" style="width: 100%">100%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Books In Stock -->
+      <div class="col-md-4">
+        <div class="analytics-card text-center">
+          <h5>Books In Stock</h5>
+          <p class="text-primary fw-bold">45 / 100</p>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pending Orders -->
+      <div class="col-md-4">
+        <div class="analytics-card text-center">
+          <h5>Pending Orders</h5>
+          <p class="text-danger fw-bold">8 / 20</p>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion Layout -->
+    <div class="accordion" id="dashboardAccordion">
+
+      <!-- Book Listings -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingBooks">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBooks">
+            📖 Book Listings (with Search)
+          </button>
+        </h2>
+        <div id="collapseBooks" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            <input type="text" id="bookSearch" class="form-control mb-3" placeholder="Search books...">
+            <div class="book-item">The Great Gatsby by F. Scott Fitzgerald - ₹399 - In Stock</div>
+            <div class="book-item">1984 by George Orwell - ₹299 - Out of Stock</div>
+            <div class="book-item">Sapiens by Yuval Noah Harari - ₹499 - In Stock</div>
+            <div class="book-item">Atomic Habits by James Clear - ₹349 - In Stock</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingCategories">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategories">
+            🗂️ Categories
+          </button>
+        </h2>
+        <div id="collapseCategories" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <ul class="list-group">
+              <li class="list-group-item">Fiction</li>
+              <li class="list-group-item">Science</li>
+              <li class="list-group-item">History</li>
+              <li class="list-group-item">Self-help</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status Panel -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingStatus">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStatus">
+            📊 Status Panel
+          </button>
+        </h2>
+        <div id="collapseStatus" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="status-message">
+              <i class="bi bi-cart-check-fill"></i> 5 new orders placed
+            </div>
+            <div class="status-message">
+              <i class="bi bi-exclamation-circle-fill"></i> 2 books out of stock
+            </div>
+            <div class="status-message">
+              <i class="bi bi-server"></i> Server Status: Running
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add New Book -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingAddBook">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddBook">
+            ➕ Add New Book
+          </button>
+        </h2>
+        <div id="collapseAddBook" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <form>
+              <div class="mb-2">
+                <label class="form-label">Book Title</label>
+                <input type="text" class="form-control" placeholder="Enter title">
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Author</label>
+                <input type="text" class="form-control" placeholder="Enter author">
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Price (₹)</label>
+                <input type="number" class="form-control" placeholder="Enter price">
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Status</label>
+                <select class="form-select">
+                  <option value="in">In Stock</option>
+                  <option value="out">Out of Stock</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-success mt-2">Add Book</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Bookstore Admin Panel | Designed by Fathima
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // a) Log dashboard title
+    const title = document.getElementById("dashboardTitle");
+    console.log("Dashboard Title:", title.textContent);
+
+    // b) Count books
+    const books = document.getElementsByClassName("book-item");
+    console.log("Total Books:", books.length);
+
+    // c) Print status messages
+    const statuses = document.getElementsByClassName("status-message");
+    Array.from(statuses).forEach((msg, index) => {
+      console.log(`Status ${index + 1}:`, msg.textContent);
+    });
+
+    // d) Change all <li> to blue
+    document.querySelectorAll("li").forEach(li => {
+      li.style.color = "blue";
+    });
+
+    // 🔍 Book search
+    document.getElementById("bookSearch").addEventListener("keyup", function () {
+      const query = this.value.toLowerCase();
+      Array.from(books).forEach(book => {
+        book.style.display = book.textContent.toLowerCase().includes(query) ? "block" : "none";
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

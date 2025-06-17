@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Java Srcipt</title>
+		 <script>
+    function light_ON() {
+      document.getElementById('imgoff').src = 'https://w7.pngwing.com/pngs/517/423/png-transparent-yellow-led-bulb-illustration-incandescent-light-bulb-electric-light-lighting-electric-light-bulb-light-fixture-lights-lamp.png';
+    }
+
+    function light_OFF() {
+      document.getElementById('imgoff').src = 'https://img.freepik.com/free-psd/led-light-bulb-energy-efficient-illumination_632498-25973.jpg?semt=ais_hybrid&w=740';
+    }
+  </script>
+	</head>
+	<body>
+		<h1 style="text-align:center;">Replacing Example by button</h1>
+		<p id="p1">When we click the button the content will be changed by javascript</p>
+		<button type="button" onclick='document.getElementById("p1").innerHTML="Content Changed"'>Click</button>
+	</body>
+<br><hr>
+<h1 style="text-align:center;">Light On and Off Example</h1>
+
+  <!-- ON Button -->
+  <button onclick="light_ON()">ON</button>
+
+  <!-- Light Bulb Image -->
+  <img src="https://img.freepik.com/free-psd/led-light-bulb-energy-efficient-illumination_632498-25973.jpg?semt=ais_hybrid&w=740"
+       style="width:100px" id="imgoff">
+
+  <!-- OFF Button -->
+  <button onclick="light_OFF()">OFF</button>
+<br><hr>
+<h2>Document.write</h2>
+<script>
+document.write("hafeeshs")
+</script>
+<br><hr>
+<h2>Document.write-with(buuton)</h2>
+<button type="button" onclick="document.write('hafeeshs')">ClickMe!!!</button>
+<br>
+<hr>
+<h2>window-alert()</h2>
+<script>
+window.alert("HI!!!!!!!!!!")
+</script>
+<br>
+<hr>
+<h2>Console Log Example</h2>
+
+<script>
+  console.log("HEY");
+</script>
+<br>
+<hr>
+<h2>Calculation</h2>
+<p id="p1"></p>
+
+<script>
+  let n1 = 10;
+  let n2 = 5;
+  let n3 = n1 + n2;
+  document.getElementById("p1").innerHTML = "The sum is: " + n3 + " calculated";
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Object</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <p class="mb-3 text-primary text-center fs-4 fw-bold" id="p1"></p>
+
+  <script>
+    const a1 = [1, 2, 3, 4, 5];
+    const even_array = a1.filter(num => num % 2 === 0);
+    console.log(even_array); // Logs: [2, 4]
+
+    // Optional: Also display on the webpage
+    document.getElementById("p1").innerText = "Even numbers: " + even_array.join(", ");
+  </script>
+</body>
+</html>

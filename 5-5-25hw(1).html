@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galaxy Web - Explore Creatively</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    header {
+      padding: 2.5rem;
+      text-align: center;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
+      color: #f1f1f1;
+      text-shadow: 2px 2px #000;
+    }
+
+    header p {
+      font-weight: 300;
+      color: #ccc;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+      padding: 1rem;
+    }
+
+    nav li {
+      margin: 0.5rem 1rem;
+    }
+
+    nav a {
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: scale(1.1);
+    }
+
+    .container {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .main, .sidebar {
+      padding: 1.5rem;
+      border-radius: 15px;
+    }
+
+    .main {
+      flex: 3;
+      min-width: 300px;
+    }
+
+    .sidebar {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .main h2, .sidebar h3 {
+      margin-bottom: 1rem;
+      color: #ffe57f;
+    }
+
+    .main p, .sidebar ul {
+      color: #e0e0e0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.8rem;
+    }
+
+    .sidebar a:hover {
+      color: #ffe57f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .quote {
+      font-style: italic;
+      color: #a1ffe7;
+      margin: 1.5rem 0;
+      border-left: 4px solid #ffe57f;
+      padding-left: 1rem;
+    }
+
+    .projects {
+      margin-top: 2rem;
+    }
+
+    .projects h3 {
+      color: #8ef6e4;
+      margin-bottom: 1rem;
+    }
+
+    .projects ul {
+      list-style-type: circle;
+      padding-left: 1.2rem;
+    }
+
+    .projects li {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 991px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 767px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav li {
+        margin: 0.3rem 0;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="glass">🌌 Galaxy Web</h1>
+    <p>✨ Discover. Design. Deploy.</p>
+  </header>
+
+  <nav class="glass">
+    <ul>
+      <li><a href="#">🏠 Home</a></li>
+      <li><a href="#">🧑‍💻 About Me</a></li>
+      <li><a href="#">📂 Projects</a></li>
+      <li><a href="#">📷 Gallery</a></li>
+      <li><a href="#">📬 Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="main glass">
+      <h2>Welcome, Explorer! 🚀</h2>
+      <p>
+        You've landed on <strong>Galaxy Web</strong> — a personal digital space built to inspire creators, coders, and dreamers. Dive into innovative web designs, discover cool tech, and stay inspired.
+      </p>
+
+      <div class="quote">
+        “The best way to predict the future is to create it.” – Peter Drucker
+      </div>
+
+      <div class="projects">
+        <h3>🛠️ Latest Projects</h3>
+        <ul>
+          <li><strong>SolarSys</strong> – An interactive solar system explorer.</li>
+          <li><strong>CodeVerse</strong> – A blog for coders, by coders.</li>
+          <li><strong>PixelPort</strong> – Portfolio for digital artists.</li>
+          <li><strong>DevDash</strong> – A productivity dashboard for developers.</li>
+        </ul>
+      </div>
+    </div>
+
+    <aside class="sidebar glass">
+      <h3>🧰 Tech Toolbox</h3>
+      <ul>
+        <li><a href="#">💻 HTML & CSS Projects</a></li>
+        <li><a href="#">⚙️ Responsive Layout Tricks</a></li>
+        <li><a href="#">🎨 UI/UX Design Tips</a></li>
+        <li><a href="#">🚀 Web Performance Tools</a></li>
+        <li><a href="#">🧠 Mindful Productivity</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="glass">
+    <p>&copy; 2025 Galaxy Web. Created with

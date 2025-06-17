@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bloomly – Spring Blossom</title>
+  <style>
+    /* ===== DEFAULT THEME VARIABLES (can still be used for fallback) ===== */
+    :root {
+      --primary-color: #e91e63;       /* Rose Pink */
+      --secondary-color: #f8bbd0;     /* Light Pink */
+      --bg-color: #fff0f5;            /* Lavender Blush */
+      --text-color: #4a148c;          /* Deep Purple Text */
+
+      --font-family: 'Segoe UI', sans-serif;
+      --font-size: 16px;
+
+      --padding: 1.5rem;
+      --margin: 1rem;
+    }
+
+    /* ===== SPRING THEME (currently using as main) ===== */
+    .spring-theme {
+      --primary-color: #d81b60;
+      --secondary-color: #fce4ec;
+      --bg-color: #fff8fb;
+      --text-color: #880e4f;
+    }
+
+    /* ===== GLOBAL STYLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family);
+      font-size: var(--font-size);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.4s ease-in-out;
+    }
+
+    header, footer {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: var(--padding);
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      letter-spacing: 1.5px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    nav {
+      background-color: var(--secondary-color);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1.5rem;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 600;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #c2185b;
+      transform: scale(1.05);
+    }
+
+    .content {
+      padding: 2rem;
+      text-align: center;
+      animation: slideIn 1s ease;
+    }
+
+    .content h2 {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+      color: var(--text-color);
+    }
+
+    .btn {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 0.8rem 1.8rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #ad1457;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+
+      .content h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+
+<!-- Apply "spring-theme" to activate the spring palette -->
+<body class="spring-theme">
+  <header>
+    <h1>🌸 Bloomly Spring</h1>
+    <p>Where Every Brand Blooms Anew</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Collections</a>
+    <a href="#">About Us</a>
+  </nav>
+
+  <section class="content">
+    <h2>Embrace the Joy of Spring</h2>
+    <p>
+      Spring is more than a season — it’s a fresh start. At <strong>Bloomly</strong>, we believe in renewing your brand 
+      with vibrant color, floral energy, and blossoming ideas. Discover our latest designs and campaigns 
+      that breathe life into your business.
+    </p>
+    <button class="btn">Start Blooming</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bloomly Studio. Designed with love in springtime.</p>
+  </footer>
+</body>
+</html>

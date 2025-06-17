@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Job Application Form</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .form-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #5a189a;
+    }
+    .section-title {
+      font-weight: 600;
+      margin-top: 20px;
+      color: #3c096c;
+    }
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #5a189a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container form-container">
+    <h2 class="text-center mb-4">Job Application Form</h2>
+
+    <!-- Change action to '/' so Flask receives POST at root -->
+    <form action="/" method="post" enctype="multipart/form-data">
+
+      <!-- Personal Details -->
+      <h5 class="section-title">👤 Personal Details</h5>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" name="fullName" id="fullName" class="form-control" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" name="email" id="email" class="form-control" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" name="phone" id="phone" class="form-control" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" name="address" id="address" class="form-control" required />
+        </div>
+      </div>
+
+      <!-- Education Details -->
+      <h5 class="section-title">🏫 Education Details</h5>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="qualification" class="form-label">Highest Qualification</label>
+          <input type="text" name="qualification" id="qualification" class="form-control" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="university" class="form-label">University/College</label>
+          <input type="text" name="university" id="university" class="form-control" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="passingYear" class="form-label">Year of Passing</label>
+          <input type="number" name="passingYear" id="passingYear" class="form-control" required />
+        </div>
+      </div>
+
+      <!-- Work Experience -->
+      <h5 class="section-title">🧰 Work Experience</h5>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="employers" class="form-label">Previous Employers</label>
+          <input type="text" name="employers" id="employers" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="jobRoles" class="form-label">Job Roles</label>
+          <input type="text" name="jobRoles" id="jobRoles" class="form-control" />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="duration" class="form-label">Duration</label>
+          <input type="text" name="duration" id="duration" class="form-control" />
+        </div>
+      </div>
+
+      <!-- Job Type Radio Buttons -->
+      <h5 class="section-title">💼 Preferred Job Type</h5>
+      <div class="mb-3">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="jobType" id="fullTime" value="Full-time" required />
+          <label class="form-check-label" for="fullTime">Full-time</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="jobType" id="partTime" value="Part-time" />
+          <label class="form-check-label" for="partTime">Part-time</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="jobType" id="internship" value="Internship" />
+          <label class="form-check-label" for="internship">Internship</label>
+        </div>
+      </div>
+
+      <!-- Resume Upload -->
+      <h5 class="section-title">🗂️ Upload Documents</h5>
+      <div class="mb-3">
+        <label for="resume" class="form-label">Upload CV/Resume (PDF or DOC)</label>
+        <input type="file" name="resume" id="resume" accept=".pdf,.doc,.docx" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="coverLetter" class="form-label">Upload Cover Letter (optional)</label>
+        <input type="file" name="coverLetter" id="coverLetter" accept=".pdf,.doc,.docx" class="form-control" />
+      </div>
+
+      <!-- Additional Questions -->
+      <h5 class="section-title">📝 Additional Questions</h5>
+      <div class="mb-3">
+        <label for="whyHire" class="form-label">Why should we hire you?</label>
+        <textarea name="whyHire" id="whyHire" rows="4" class="form-control" required></textarea>
+      </div>
+
+      <!-- Terms and Conditions Checkbox -->
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="terms" required />
+        <label class="form-check-label" for="terms">
+          I agree to the <a href="#">terms and conditions</a>.
+        </label>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary px-5 mt-3">Submit Application</button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Bootstrap JS CDN (for form enhancements) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Hospital Queue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .patient-box {
+      background:#fa006c;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin: 5px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container text-center mt-5">
+  <h3>🏥 Simple Hospital Waiting Room</h3>
+
+  <input type="text" id="nameInput" class="form-control my-3" placeholder="Patient Name">
+
+  <div class="d-grid gap-2 d-md-block">
+    <button class="btn btn-success" onclick="add()">Add</button>
+    <button class="btn btn-warning" onclick="emergency()">Emergency</button>
+    <button class="btn btn-info" onclick="call()">Call</button>
+    <button class="btn btn-danger" onclick="leave()">Leave</button>
+    <button class="btn btn-secondary" onclick="clearAll()">Clear</button>
+  </div>
+
+  <h5 class="mt-4">Queue:</h5>
+  <div id="queueArea"></div>
+</div>
+
+<script>
+  let queue = [];
+
+  function updateDisplay() {
+    let area = document.getElementById("queueArea");
+    area.innerHTML = queue.length === 0 ? "No patients" : "";
+    queue.forEach(name => {
+      area.innerHTML += `<div class="patient-box">${name}</div>`;
+    });
+  }
+
+  function getName() {
+    let input = document.getElementById("nameInput");
+    let name = input.value.trim();
+    input.value = "";
+    return name;
+  }
+
+  function add() {
+    let name = getName();
+    if (name) {
+      queue.push(name);
+      updateDisplay();
+    } else {
+      alert("Please enter a name.");
+    }
+  }
+
+  function emergency() {
+    let name = getName();
+    if (name) {
+      queue.unshift(name);
+      updateDisplay();
+    } else {
+      alert("Please enter a name.");
+    }
+  }
+
+  function call() {
+    if (queue.length > 0) {
+      alert("Calling: " + queue.shift());
+      updateDisplay();
+    } else {
+      alert("No one to call.");
+    }
+  }
+
+  function leave() {
+    if (queue.length > 0) {
+      alert(queue.pop() + " left the queue.");
+      updateDisplay();
+    } else {
+      alert("Queue is already empty.");
+    }
+  }
+
+  function clearAll() {
+    queue = [];
+    updateDisplay();
+  }
+
+  updateDisplay();
+</script>
+
+</body>
+</html>

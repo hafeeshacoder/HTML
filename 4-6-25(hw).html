@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Product Filter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #eef6ff;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      padding-top: 50px;
+    }
+    .card {
+      width: 100%;
+      max-width: 500px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card border border-primary">
+  <h4 class="text-center text-primary">📋 Product Filter</h4>
+  <button class="btn btn-primary w-100 mt-3" onclick="checkProducts()">Show Products > ₹50</button>
+  <div id="output" class="mt-4"></div>
+</div>
+
+<script>
+  // Step 1: Define product array
+  let products = [
+    { name: "Book", price: 80 },
+    { name: "Pen", price: 20 },
+    { name: "Bag", price: 150 },
+    { name: "Scale", price: 30 },
+    { name: "Shoes", price: 400 }
+  ];
+
+  function checkProducts() {
+    let count = 0;
+    let productNames = "";
+
+    // Step 2: Loop through all products
+    for (let i = 0; i < products.length; i++) {
+      let product = products[i];
+
+      // Step 3: Check if price > 50
+      if (product.price > 50) {
+        count++;
+        productNames += `<li class="list-group-item">${product.name} - ₹${product.price}</li>`;
+      }
+    }
+
+    // Step 4: Show results
+    document.getElementById("output").innerHTML = `
+      <ul class="list-group mb-3">${productNames}</ul>
+      <div class="alert alert-success text-center">
+        Total Products Above ₹50: <strong>${count}</strong>
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>

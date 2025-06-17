@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modern Profile Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .profile-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    .profile-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+    }
+    .profile-pic {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 50%;
+      border: 5px solid #0d6efd;
+    }
+    .info-label {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+    .icon-text i {
+      color: #0d6efd;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="profile-card row g-4 align-items-start">
+        
+        <!-- Left: Image + Name -->
+        <div class="col-md-4 profile-left">
+          <img src="C:\Users\HP250\OneDrive\Documents\hafeesha photo.jpg" alt="Profile Picture" class="profile-pic mb-3">
+          <h2 class="h3 fw-bold mb-0">Fathima Hafeesha P</h2>
+          <p class="text-muted">Frontend Developer</p>
+        </div>
+
+        <!-- Right: Bio + Contact -->
+        <div class="col-md-8">
+          <h2 class="h1 fw-bold mb-3">About Me</h2>
+          <p class="lead">
+            I’m a creative developer with a passion for building elegant and efficient web applications. I specialize in HTML,CSS, Python, and Bootstrap.
+          </p>
+
+          <hr>
+
+          <h3 class="h4 fw-bold mt-4">Contact Info</h3>
+          <p class="icon-text"><i class="bi bi-envelope-fill"></i> <span class="info-label text-uppercase text-muted">Email:</span> fathimahafeesha632@gmail.com</p>
+          <p class="icon-text"><i class="bi bi-phone-fill"></i> <span class="info-label text-uppercase text-muted">Phone:</span> 7305827557</p>
+          <p class="icon-text"><i class="bi bi-geo-alt-fill"></i> <span class="info-label text-uppercase text-muted">Location:</span> Chennai, India</p>
+		  
+          <div class="mt-4">
+            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill me-2"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a href="#" class="btn btn-outline-dark btn-sm rounded-pill me-2"><i class="bi bi-github"></i> GitHub</a>
+            <a href="#" class="btn btn-outline-danger btn-sm rounded-pill"><i class="bi bi-envelope"></i> Email</a>
+          </div>
+		  <hr>
+		  <h3 class="h4 fw-bold mt-4">Education</h3>
+		  <p class="icon-text"><i class="bi bi-mortarboard-fill"></i>B.Sc Computer Science with Artificial Intelligence - 87%<br><i class="text-capitalize text-muted">-- Srimathi Devkunvar Nalal Batt Vaishnav College for Women</i></p>
+          <p class="icon-text"><i class="bi bi-mortarboard-fill"></i>HSC - 78%<br><i class="text-capitalize text-muted">-- Christ King Girls Higher Secondary School</i></p>
+		  <p class="icon-text"><i class="bi bi-mortarboard-fill"></i>SSLC - 82.2%<br><i class="text-capitalize text-muted">-- Christ King Girls Higher Secondary School</i></p>
+		  <hr>
+		  <h3 class="h4 fw-bold mt-4"><i class="bi bi-cpu-fill"></i> Skills</h3>
+		  <blockquote>
+  <p><i class="bi bi-code-slash"></i> HTML</p>
+  <p><i class="bi bi-code-slash"></i> CSS</p>
+  <p><i class="bi bi-braces"></i> Python</p>
+  <p><i class="bi bi-braces"></i> C++</p>
+  <p><i class="bi bi-braces"></i> C</p>
+  <p><i class="bi bi-lightbulb-fill"></i> Critical Thinking</p>
+  <p><i class="bi bi-people-fill"></i> Effective Communication</p>
+</blockquote>
+<hr>
+ <h3 class="h4 fw-bold mt-4"><i class="bi bi-journal-code"></i> Projects</h3>
+ <p><b>Recipe Making Process Webpage</b> - A user-friendly platform for Recipe making, built using HTML, CSS, and Flask as the backend framework.</p>
+ <p><b>Islamic Hub Website</b> - A user-friendly platform to learn about Islam and book Tajweed classes, built using HTML, CSS, and Flask as the backend framework.</p>
+ <p><b>Space Exploration Webpage</b> - A user-friendly platform to explore and learn about space, built using HTML, CSS animations, and Python.</p>
+ <p><b>CoffeeShop Landing Website</b> - A user-friendly platform to learn about coffee and book your tables, built using HTML, CSS animations, and Python.</p>
+ <hr>
+  <h3 class="h4 fw-bold mt-4"><i class="bi bi-certificate"></i> Certifications</h3>
+  <p><b>LinkedIn</b></p>
+  <p><b>Infosys</b></p>
+  <p><b>TCS</b></p>
+  <p><b>Simplilearning</b></p>
+  <p><b>Microsoft</b></p>
+  <p><b>Greatlearning</b></p>
+  <hr>
+  <blockquote class="blockquote text-start ps-3 border-start border-3 border-primary">
+  <h3 class="h4 fw-bold mt-4">Social Media</h3>
+  <p><i class="bi bi-facebook"></i> fathimahafeesha@facebook</p>
+  <p><i class="bi bi-twitter"></i> fathima@Twitter</p>
+  <p><i class="bi bi-instagram"></i> _hafeez_20_20</p>
+  <p><i class="bi bi-whatsapp"></i> Hafeesha</p>
+  <p><i class="bi bi-telegram"></i> hafeez</p>
+  <p><i class="bi bi-youtube"></i> hafeeshayoutubechallel</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🌈 Unique E-Commerce Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(45deg, #e3ffe7, #d9e7ff);
+      font-family: 'Trebuchet MS', sans-serif;
+      padding: 40px 0;
+    }
+
+    .dashboard-title {
+      font-weight: 700;
+      color: #003153;
+      margin-bottom: 50px;
+      text-align: center;
+      text-shadow: 1px 1px 3px #ffffff;
+    }
+
+    .card {
+      border: 0;
+      border-radius: 15px;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      background: linear-gradient(to bottom right, #ffffff, #f2f9ff);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .card-header {
+      background: #003153;
+      color: white;
+      font-size: 1.1rem;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .card-body {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #222;
+      padding: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      font-weight: bold;
+      color: #003153;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 class="dashboard-title">🛍️ Unique E-Commerce Dashboard</h2>
+
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">✅ In-Stock Product Names</div>
+        <div class="card-body" id="inStockProducts"></div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">💸 Most Expensive Product</div>
+        <div class="card-body" id="expensiveProduct"></div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">🚫 Any Out of Stock?</div>
+        <div class="card-body" id="outOfStock"></div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">💰 All Products < ₹2000?</div>
+        <div class="card-body" id="priceCheck"></div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">📋 All Product Names</div>
+        <div class="card-body" id="nameList"></div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">🔌 Electronics in Stock (Sorted)</div>
+        <div class="card-body" id="electronicsList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer mt-5">✨ Built with Array Methods & Bootstrap</div>
+</div>
+
+<script>
+  const products = [
+    { id: 1, name: "iPhone 14", category: "Electronics", price: 1200, stock: 5 },
+    { id: 2, name: "Samsung TV", category: "Electronics", price: 1800, stock: 2 },
+    { id: 3, name: "Leather Wallet", category: "Fashion", price: 500, stock: 0 },
+    { id: 4, name: "HP Laptop", category: "Electronics", price: 1999, stock: 3 },
+    { id: 5, name: "Sneakers", category: "Footwear", price: 1200, stock: 10 },
+    { id: 6, name: "Smart Watch", category: "Electronics", price: 950, stock: 0 },
+    { id: 7, name: "Denim Jacket", category: "Fashion", price: 1700, stock: 4 }
+  ];
+
+  console.log("All Products:", products);
+
+  const inStock = products.filter(p => p.stock > 0);
+  const inStockNames = inStock.map(p => p.name);
+  console.log("In-Stock Products:", inStock);
+  console.log("In-Stock Product Names:", inStockNames);
+
+  const mostExpensive = products.reduce((max, p) => p.price > max.price ? p : max);
+  console.log("Most Expensive Product:", mostExpensive);
+
+  const anyOutOfStock = products.some(p => p.stock === 0);
+  console.log("Any Product Out of Stock?", anyOutOfStock);
+
+  const allUnder2000 = products.every(p => p.price < 2000);
+  console.log("All Products Under ₹2000?", allUnder2000);
+
+  const allNames = products.map(p => p.name).join(", ");
+  console.log("All Product Names:", allNames);
+
+  const sortedElectronics = products
+    .filter(p => p.category === "Electronics" && p.stock > 0)
+    .sort((a, b) => a.price - b.price)
+    .map(p => `${p.name} (₹${p.price})`);
+  console.log("Electronics In Stock (Sorted by Price):", sortedElectronics);
+
+  // Display in HTML
+  document.getElementById("inStockProducts").innerText = inStockNames.join(", ");
+  document.getElementById("expensiveProduct").innerText = `${mostExpensive.name} - ₹${mostExpensive.price}`;
+  document.getElementById("outOfStock").innerText = anyOutOfStock ? "⚠️ Yes, some items are out of stock." : "✅ All products are in stock.";
+  document.getElementById("priceCheck").innerText = allUnder2000 ? "✅ Yes, all products are under ₹2000" : "❌ No, some are above ₹2000";
+  document.getElementById("nameList").innerText = allNames;
+  document.getElementById("electronicsList").innerText = sortedElectronics.join(" | ");
+</script>
+
+</body>
+</html>
