@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title> Local storage </title>
+ </head>
+ <body>
+ <h2>local storage</h2>
+ <script>
+ localStorage.setItem("name","hafeez");
+ localStorage.removeItem('name');
+ let nameValue=localStorage.getItem('name');
+ console.log(nameValue);
+ </script>
+ <br><br>
+ <hr>
+  <input type ="text" id="t1"> </input>
+  <button id="b1" onclick ="setName()"> set </button>
+  <button id="b2" onclick ="getName()">get item</button>
+  <p id="p1"></p>
+ <script>
+    function setName()
+	{
+		const userName = document.getElementById("t1").value;
+		if(userName !=="")
+		{
+	    localStorage.setItem("UN",userName);
+		alert("Item saved!!!");
+		}	
+    }
+	function getName()
+	{
+	const name =(localStorage.getItem("UN"));
+	document.getElementById("p1").innerHTML = `username = ${name}`;
+    }
+ 
+ </script>
+ <script>
+ let userDetail={"name":"HAfi", "role": "HR"};
+ localStorage.setItem("UserName",JSON.stringify(userDetail));
+ let value = JSON.parse(localStorage.getItem("UserName"));
+ console.log(value.name)
+ console.log(value.role);
+ </script>
+ <hr>
+ <br>
+ <div>
+	<h2>Local Storage</h2>
+	<input type="text" id="t2" placeholder="Enter username">
+	<button class="btn btn-primary" onclick="setName1()">Set</button>
+	<button class="btn btn-secondary" onclick="getName1()">Get</button>
+	<p id="p2"></p>
+</div>
+
+<div>
+	<h2>Session Storage</h2>
+	<input type="text" id="t3" placeholder="Enter username">
+	<button class="btn btn-primary" onclick="setSessionName()">Set</button>
+	<button class="btn btn-secondary" onclick="getSessionName()">Get</button>
+	<p id="p3"></p>
+</div>
+
+<script>
+	function setName1() {
+		const userName1 = document.getElementById("t2").value;
+		if (userName1 !== "") {
+			localStorage.setItem("USERNAME1", userName1);
+			alert("Your name was saved.");
+		}
+	}
+
+	function getName1() {
+		const name1 = localStorage.getItem("USERNAME1");
+		document.getElementById("p2").innerHTML = `Username = ${name1}`;
+	}
+
+	function setSessionName() {
+		const userName2 = document.getElementById("t3").value;
+		if (userName2 !== "") {
+			sessionStorage.setItem("Username2", userName2);
+			alert("Item saved in session storage.");
+		}
+	}
+
+	function getSessionName() {
+		const name2 = sessionStorage.getItem("Username2");
+		document.getElementById("p3").innerHTML = `Username2 = ${name2}`;
+	}
+</script>
+
+</body>
+ </html>
